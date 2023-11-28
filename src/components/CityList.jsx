@@ -7,18 +7,18 @@ import Message from "./Message";
 export const CityList = ({ cities, isLoading }) => {
   if (isLoading) return <Spinner />;
 
-  // if (cities.length === 0) {
-  //   return <Message message={"Please click city on the map first!"} />;
-  // }
+  if (cities.length === 0) {
+    return <Message message={"Please click city on the map first!"} />;
+  }
 
   return (
     <ul className={style.cityList}>
       {cities.map((singleCity) => (
         <CityItem singleCity={singleCity} key={singleCity.id} />
       ))}
-      {!cities.length && (
+      {/* {!cities.length && (
         <Message message={"Please click city on the map first!"} />
-      )}
+      )} */}
     </ul>
   );
 };
