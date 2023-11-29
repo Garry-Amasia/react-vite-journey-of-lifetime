@@ -13,8 +13,8 @@ export const CityList = ({ cities, isLoading }) => {
 
   return (
     <ul className={style.cityList}>
-      {cities.map((singleCity) => (
-        <CityItem singleCity={singleCity} key={singleCity.id} />
+      {cities.map((city) => (
+        <CityItem city={city} key={city.id} />
       ))}
       {/* {!cities.length && (
         <Message message={"Please click city on the map first!"} />

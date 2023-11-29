@@ -12,18 +12,15 @@ export const CountryList = ({ cities, isLoading }) => {
     return <Message message={"Please click city on the map first!"} />;
   }
 
-  //   console.log(cities);
-  //   const cityName = cities.map((single) => single.cityName);
-  //   console.log(cityName);
-  //   const uniques = [...new Set(cityName)];
-  //   console.log(uniques);
-
   const uniques = cities.filter((obj, index) => {
     return index === cities.findIndex((o) => obj.country === o.country);
   });
 
   return (
     <ul className={style.countryList}>
+      {/* {cities.length === 0 && (
+        <Message message={"Please click city on the map first!"} />
+      )} */}
       {uniques.map((country) => (
         <CountryItem country={country} key={country.id} />
       ))}
@@ -33,3 +30,5 @@ export const CountryList = ({ cities, isLoading }) => {
     </ul>
   );
 };
+
+// https://bobbyhadz.com/blog/javascript-remove-duplicates-from-array-of-objects
